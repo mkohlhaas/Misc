@@ -13,6 +13,9 @@
 	  - tree
 	  - hash tables, see also [Tables in demo.odin](https://github.com/odin-lang/Odin/blob/master/examples/demo/demo.odin#L902) and [Joys of Hashing](https://github.com/mkohlhaas/Joys-of-Hashing)
 	  - ...
+1. LLVM Tooling
+	  - [Learn LLVM 12](https://github.com/PacktPublishing/Learn-LLVM-12)
+	  - [LLVM Techniques Tips and Best Practices](https://github.com/PacktPublishing/LLVM-Techniques-Tips-and-Best-Practices-Clang-and-Middle-End-Libraries)
 1. Guideline: Use same [libraries as VCV Rack](https://github.com/VCVRack/Rack#software-libraries)
 1. Wavetable Oscillator
 	  - Algorithm in Odin with SIMD support

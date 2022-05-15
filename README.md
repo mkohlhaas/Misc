@@ -3,7 +3,7 @@
 	    - ~~[Issue: Language Server not Starting](https://github.com/DanielGavin/ols/issues/105)~~
 1. Learn Odin
 	  - ~~[Odin Overview](https://odin-lang.org/docs/overview/)~~
-	  - [Odin Demo](https://github.com/odin-lang/Odin/blob/master/examples/demo/demo.odin)
+	  - ~~[Odin Demo](https://github.com/odin-lang/Odin/blob/master/examples/demo/demo.odin)~~
 	  - [Odin Examples](https://github.com/odin-lang/examples)
 1. Create basic data structures in Odin
 	  - Reference: [Pointers in C](https://github.com/mkohlhaas/Pointers-C-Programming)

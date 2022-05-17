@@ -5,6 +5,8 @@
 	  - ~~[Odin Overview](https://odin-lang.org/docs/overview/)~~
 	  - ~~[Odin Demo](https://github.com/odin-lang/Odin/blob/master/examples/demo/demo.odin)~~
 	  - [Odin Examples](https://github.com/odin-lang/examples)
+	    - Create own version of Tetris
+	    - [Tetris from Scratch](https://www.youtube.com/watch?v=8OK8_tHeCIA&t=12s)
 1. Create basic data structures in Odin
 	  - Reference: [Pointers in C](https://github.com/mkohlhaas/Pointers-C-Programming)
 	  - singly linked list

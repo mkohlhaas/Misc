@@ -56,20 +56,18 @@ int Rotate(int px, int py, int rot) {
 }
 
 bool DoesPieceFit(int nTetromino, int nRotation, int nPosX, int nPosY) {
-  // All Field cells >0 are occupied
+  // All Field cells > 0 are occupied
   for (int px = 0; px < 4; px++)
     for (int py = 0; py < 4; py++) {
       int pi = Rotate(px, py, nRotation); // Get index into piece
-      int fi =
-          (nPosY + py) * nFieldWidth + (nPosX + px); // Get index into field
+      int fi = (nPosY + py) * nFieldWidth + (nPosX + px); // Get index into field
 
       // Check that test is in bounds. Note out of bounds does not necessarily
       // mean a fail, as the long vertical piece can have cells that lie outside
       // the boundary, so we'll just ignore them
       if (nPosX + px >= 0 && nPosX + px < nFieldWidth) {
         if (nPosY + py >= 0 && nPosY + py < nFieldHeight) {
-          // In Bounds so do collision check
-          if (tetromino[nTetromino][pi] != L'.' && pField[fi] != 0)
+          if (tetromino[nTetromino][pi] != L'.' && pField[fi] != 0) // In Bounds so do collision check
             return false; // fail on first hit
         }
       }
@@ -78,8 +76,7 @@ bool DoesPieceFit(int nTetromino, int nRotation, int nPosX, int nPosY) {
 }
 
 int main() {
-  // Create Screen Buffer
-  wchar_t *screen = new wchar_t[nScreenWidth * nScreenHeight];
+  wchar_t *screen = new wchar_t[nScreenWidth * nScreenHeight]; // Create Screen Buffer
   for (int i = 0; i < nScreenWidth * nScreenHeight; i++)
     screen[i] = L' ';
   HANDLE hConsole = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
@@ -130,12 +127,10 @@ int main() {
   tetromino[5].append(L".X...X...XX.....");
   tetromino[6].append(L"..X...X..XX.....");
 
-  pField =
-      new unsigned char[nFieldWidth * nFieldHeight]; // Create play field buffer
-  for (int x = 0; x < nFieldWidth; x++)              // Board Boundary
+  pField = new unsigned char[nFieldWidth * nFieldHeight]; // Create play field buffer
+  for (int x = 0; x < nFieldWidth; x++) // Board Boundary
     for (int y = 0; y < nFieldHeight; y++)
-      pField[y * nFieldWidth + x] =
-          (x == 0 || x == nFieldWidth - 1 || y == nFieldHeight - 1) ? 9 : 0;
+      pField[y * nFieldWidth + x] = (x == 0 || x == nFieldWidth - 1 || y == nFieldHeight - 1) ? 9 : 0;
 
   // Game Logic
   bool bKey[4];
@@ -161,8 +156,7 @@ int main() {
 
     // Input ========================
     for (int k = 0; k < 4; k++) // R   L   D Z
-      bKey[k] =
-          (0x8000 & GetAsyncKeyState((unsigned char)("\x27\x25\x28Z"[k]))) != 0;
+      bKey[k] = (0x8000 & GetAsyncKeyState((unsigned char)("\x27\x25\x28Z"[k]))) != 0;
 
     // Game Logic ===================
 
@@ -204,7 +198,7 @@ int main() {
               bLine &= (pField[(nCurrentY + py) * nFieldWidth + px]) != 0;
 
             if (bLine) {
-              // Remove Line, set to =
+              // Remove Line, set to '='
               for (int px = 1; px < nFieldWidth - 1; px++)
                 pField[(nCurrentY + py) * nFieldWidth + px] = 8;
               vLines.push_back(nCurrentY + py);
